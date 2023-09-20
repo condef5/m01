@@ -1,14 +1,14 @@
-<h1 class="font-bold text-4xl">Topic Order</h1>
+<h1 class="text-theme-gray border-t-4 border-b-4 border-theme-gray py-3 text-center text-3xl">Topic Order</h1>
 
-<ul class="mt-8 list-disc">
+<ul class="mt-4 list-disc">
   <% @sections.each do |section| %>
-    <li class="mt-4">
-      <a href="<%= section.id  %>" class="text-blue-500 hover:underline"><%= section.title %></a>
+    <li class="mt-2">
+      <a href="#<%= section.id  %>" class="text-blue-500 hover:underline"><%= section.title %></a>
 
-      <ul class="mt-2 pl-4" style="list-style-type: circle;">
+      <ul class="mt-2 pl-8" style="list-style-type: circle;">
         <% section.sub_sections.each do |sub| %>
           <li>
-            <a href="<%= sub.id  %>" class="text-gray-500 hover:underline"><%= sub.title %></a>
+            <a href="#<%= sub.id  %>" class="text-gray-500 hover:underline"><%= sub.title %></a>
           </li>
         <% end %>
       </ul>
