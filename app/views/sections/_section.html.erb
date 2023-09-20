@@ -1,17 +1,33 @@
-<div id="<%= dom_id section %>">
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
+<div id="<%= dom_id section %>" class="my-5">
+  <h2 class="font-bold text-2xl flex gap-2 items-center">
     <%= section.title %>
-  </p>
+    <%= link_to 'Add section',
+      new_section_path(parent_id: section.id),
+      class: "text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline"
+    %>
+  </h2>
 
-  <p class="my-5">
-    <strong class="block font-medium mb-1">Parent:</strong>
-    <%= section.parent_id %>
-  </p>
+  <ul class="mt-2 pl-8" style="list-style-type: circle;">
+    <% section.sub_sections.each do |sub| %>
+      <li>
+        <div class="flex gap-2 items-center">
+          <span class="text-gray-500"> <%= sub.title %> </span>
+          <%= link_to 'Add section',
+            new_section_path(parent_id: sub.id),
+            class: "text-xs font-medium text-blue-600 dark:text-blue-500 hover:underline"
+          %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+
+  <div class="my-4 pl-5">
+  </div>
 
   <% if action_name != "show" %>
-    <%= link_to "Show this section", section, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this section', edit_section_path(section), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
+    <div class="mt-4 text-sm">
+      <%= link_to 'Edit this section', edit_section_path(section), class: "rounded-lg py-2 ml-2 px-4 bg-gray-100 inline-block font-medium" %>
+      <hr class="mt-6">
+    </div>
   <% end %>
 </div>

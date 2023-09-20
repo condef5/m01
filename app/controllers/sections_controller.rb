@@ -3,7 +3,7 @@ class SectionsController < ApplicationController
 
   # GET /sections or /sections.json
   def index
-    @sections = Section.all
+    @sections = Section.where(parent_id: nil).order(:title).includes(:sub_sections)
   end
 
   # GET /sections/1 or /sections/1.json
@@ -25,7 +25,7 @@ class SectionsController < ApplicationController
 
     respond_to do |format|
       if @section.save
-        format.html { redirect_to section_url(@section), notice: "Section was successfully created." }
+        format.html { redirect_to sections_url, notice: "Section was successfully created." }
         format.json { render :show, status: :created, location: @section }
       else
         format.html { render :new, status: :unprocessable_entity }
