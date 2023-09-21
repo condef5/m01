@@ -1,6 +1,6 @@
 <h1 class="text-theme-gray border-t-4 border-b-4 border-theme-gray py-3 text-center text-3xl">Topic Order</h1>
 
-<ul class="mt-4 list-disc ml-3">
+<ul class="mt-4 list-disc ml-3" style="column-count: 2;">
   <% @sections.each do |section| %>
     <%= render partial: "home/sub_section", locals: { section: section } %>
   <% end %>

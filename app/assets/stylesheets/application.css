@@ -13,3 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
+.breaking {
+  break-inside: avoid-column;
+}
