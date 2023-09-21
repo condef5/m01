@@ -2,16 +2,6 @@
 
 <ul class="mt-4 list-disc">
   <% @sections.each do |section| %>
-    <li class="mt-2">
-      <a href="#<%= section.id  %>" class="text-blue-500 hover:underline"><%= section.title %></a>
-
-      <ul class="mt-2 pl-8" style="list-style-type: circle;">
-        <% section.sub_sections.each do |sub| %>
-          <li>
-            <a href="#<%= sub.id  %>" class="text-gray-500 hover:underline"><%= sub.title %></a>
-          </li>
-        <% end %>
-      </ul>
-    </li>
+    <%= render partial: "home/sub_section", locals: { section: section } %>
   <% end %>
 </ul>
