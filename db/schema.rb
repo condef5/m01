@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_09_20_225028) do
+ActiveRecord::Schema[7.1].define(version: 2023_09_21_003454) do
   create_table "sections", force: :cascade do |t|
     t.string "title"
     t.integer "parent_id"
@@ -19,5 +19,15 @@ ActiveRecord::Schema[7.1].define(version: 2023_09_20_225028) do
     t.index ["parent_id"], name: "index_sections_on_parent_id"
   end
 
+  create_table "topics", force: :cascade do |t|
+    t.string "title"
+    t.string "video"
+    t.integer "section_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["section_id"], name: "index_topics_on_section_id"
+  end
+
   add_foreign_key "sections", "sections", column: "parent_id", on_delete: :nullify
+  add_foreign_key "topics", "sections"
 end
