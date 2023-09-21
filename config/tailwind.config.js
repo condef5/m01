@@ -11,11 +11,13 @@ module.exports = {
     extend: {
       fontFamily: {
         // sans: ["Inter var", ...defaultTheme.fontFamily.sans],
-        sans: ['Arial', ...defaultTheme.fontFamily.sans],
+        sans: ["'Roboto'", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         theme: {
-          gray: "#6c757d", // Define the "gris" color with the desired value
+          gray: "#6c757d",
+          red: "#df2a30",
+          sky: "#ecf2f9",
         },
       },
     },

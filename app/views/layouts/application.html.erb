@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
@@ -12,7 +15,24 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-8 px-5">
+    <div class="bg-theme-red">
+      <div class="h-[72px] flex items-center container px-5 mx-auto" style="max-width: 1200px;">
+        <a href="/">
+          <h1 class="text-white text-2xl text-center">Web m01</h1>
+        </a>
+      </div>
+    </div>
+
+    <header class="bg-theme-sky p-4">
+      <div class="container flex justify-center px-5 mx-auto gap-10 text-sm font-medium" style="max-width: 1200px;">
+        <%= link_to "Home", root_path, class: "hover:opacity-60" %>
+        <%= link_to "About us", root_path, class: "hover:opacity-60" %>
+        <%= link_to "Blog", root_path, class: "hover:opacity-60" %>
+        <%= link_to "Sections", sections_path, class: "hover:opacity-60" %>
+      </div>
+    </header>
+
+    <main class="container mx-auto mt-8 px-5" style="max-width: 1200px;">
       <%= yield %>
     </main>
   </body>

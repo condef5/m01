@@ -1,5 +1,5 @@
-<li class="breaking">
-  <%= link_to section.title, "#" + section.id.to_s , class: "text-blue-500 hover:underline"  %>
+<li class="breaking mt-1">
+  <%= link_to section.title, "#" + section.id.to_s , class: "text-blue-500 p-2 pr-8 inline-block hover:bg-gray-100 hover:underline"  %>
 
   <ul class="pl-8 section" style="list-style-type: circle;">
     <% section.sub_sections.each do |sub| %>

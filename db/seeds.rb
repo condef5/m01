@@ -25,7 +25,7 @@ topics = [
 
 # Create 30 top-level sections
 35.times do |i|
-  top_section = Section.create(title: "Section #{i * 10 + 1}")
+  top_section = Section.create(title: "Section delta spoken #{i * 10 + 1}")
 
   section_topics = [10, 15, 20].sample
   section_topics.times do |k|
@@ -39,7 +39,7 @@ topics = [
   num_sub_sections = [0, 1, 4].sample
 
   num_sub_sections.times do |j|
-    sub_section = top_section.sub_sections.create(title: "Sub-Section #{j + 1}")
+    sub_section = top_section.sub_sections.create(title: "Sub section in order #{j + 1}")
 
     # Create random topics for each sub-section
     num_topics = [3, 5, 7].sample

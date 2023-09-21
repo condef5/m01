@@ -17,3 +17,12 @@
 .breaking {
   break-inside: avoid-column;
 }
+
+.header {
+  box-shadow: 4px 5px 16px -4px #dee3ea;
+  margin-bottom: 50px;
+  border-color: #dee3ea;
+  border-width: 1px;
+  padding: 16px;
+  color: #26292e;
+}

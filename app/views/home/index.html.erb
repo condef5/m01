@@ -1,12 +1,12 @@
-<h1 class="text-theme-gray border-t-4 border-b-4 border-theme-gray py-3 text-center text-3xl">Topic Order</h1>
+<h2 class="text-theme-gray border-t-4 border-b-4 border-theme-gray py-3 text-center text-3xl header">Topic Order</h2>
 
-<ul class="mt-4 list-disc ml-3" style="column-count: 2;">
+<ul class="list-disc ml-3" style="column-count: 2;">
   <% @sections.each do |section| %>
     <%= render partial: "home/sub_section", locals: { section: section } %>
   <% end %>
 </ul>
 
-<hr style="background:rgb(128,0,0);" class="my-6 h-[5px] border-none" />
+<hr class="my-6 h-[5px] bg-theme-red border-none" />
 
 <ul class="mt-4 ml-3">
   <% @sections.each do |section| %>
