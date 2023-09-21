@@ -1,5 +1,5 @@
-<li>
-  <a href="#<%= section.id  %>" class="text-blue-500 hover:underline"><%= section.title %></a>
+<li class="breaking">
+  <%= link_to section.title, "#" + section.id.to_s , class: "text-blue-500 hover:underline"  %>
 
   <ul class="pl-8 section" style="list-style-type: circle;">
     <% section.sub_sections.each do |sub| %>
@@ -7,7 +7,7 @@
         <%= render partial: "home/sub_section", locals: { section: sub } %>
       <% else %>
         <li>
-          <a href="#<%= sub.id  %>" class="text-blue-500 hover:underline"><%= sub.title %></a>
+          <%= link_to sub.title, "#" + sub.id.to_s, class: "text-blue-500 hover:underline"  %>
         </li>
       <% end  %>
     <% end %>
