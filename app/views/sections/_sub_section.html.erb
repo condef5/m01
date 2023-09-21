@@ -1,0 +1,28 @@
+<li>
+  <div class="flex gap-2 items-center">
+    <%= link_to section.title, section, class: "text-gray-500 hover:underline" %>
+
+    <%= link_to 'Add section',
+        new_section_path(parent_id: section.id),
+        class: "text-xs font-medium text-blue-600 dark:text-blue-500 hover:underline"
+      %>
+  </div>
+
+  <ul class="pl-8 section" style="list-style-type: circle;">
+    <% section.sub_sections.each do |sub| %>
+      <% if sub.sub_sections.any? %>
+        <%= render partial: "sections/sub_section", locals: { section: sub } %>
+      <% else %>
+        <li>
+          <div class="flex gap-2 items-center">
+            <%= link_to sub.title, sub, class: "text-gray-500 hover:underline" %>
+            <%= link_to 'Add section',
+              new_section_path(parent_id: sub.id),
+              class: "text-xs font-medium text-blue-600 dark:text-blue-500 hover:underline"
+            %>
+          </div>
+        </li>
+      <% end  %>
+    <% end %>
+  </ul>
+</li>
