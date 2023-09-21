@@ -1,0 +1,25 @@
+<li class="">
+  <h2 class="text-red-700 text-2xl" id="<%= section.id %>"> <%= section.title %> </h2>
+
+  <ul class="pl-8 section list-disc">
+    <% section.topics.each do |topic| %>
+      <li>
+        <div class="flex gap-2">
+          <%= link_to topic.title, "#", class: "text-blue-500 hover:underline" %>
+
+          <% if topic.video.present?  %>
+            <%= link_to "🎥 video", topic.video, target: "_blank", class: "border-b-2 border-red-500 text-red-300" %>
+          <% end %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+
+  <ul class="list-disc ml-8">
+    <% section.sub_sections.each do |sub| %>
+      <% if sub.topics.any? %>
+        <%= render partial: "home/sub_topic", locals: { section: sub } %>
+      <% end %>
+    <% end %>
+  </ul>
+</li>
