@@ -1,6 +1,6 @@
 <div id="<%= dom_id section %>" class="my-5">
   <h2 class="font-bold text-2xl flex gap-2 items-center">
-    <%= section.title %>
+    <%= link_to section.title, section, class: "hover:underline" %>
     <%= link_to 'Add section',
       new_section_path(parent_id: section.id),
       class: "text-sm font-medium text-blue-600 dark:text-blue-500 hover:underline"

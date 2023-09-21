@@ -1,6 +1,7 @@
 <li>
   <div class="flex gap-2 items-center">
-    <span class="text-gray-500"> <%= section.title %> </span>
+    <%= link_to section.title, section, class: "text-gray-500 hover:underline" %>
+
     <%= link_to 'Add section',
         new_section_path(parent_id: section.id),
         class: "text-xs font-medium text-blue-600 dark:text-blue-500 hover:underline"
@@ -14,11 +15,11 @@
       <% else %>
         <li>
           <div class="flex gap-2 items-center">
-            <span class="text-gray-500"> <%= sub.title %> </span>
+            <%= link_to sub.title, sub, class: "text-gray-500 hover:underline" %>
             <%= link_to 'Add section',
-            new_section_path(parent_id: sub.id),
-            class: "text-xs font-medium text-blue-600 dark:text-blue-500 hover:underline"
-          %>
+              new_section_path(parent_id: sub.id),
+              class: "text-xs font-medium text-blue-600 dark:text-blue-500 hover:underline"
+            %>
           </div>
         </li>
       <% end  %>

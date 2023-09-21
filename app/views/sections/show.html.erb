@@ -7,7 +7,7 @@
     <%= render @section %>
 
     <%= link_to 'Edit this section', edit_section_path(@section), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <div class="inline-block ml-2">
+    <div class="inline-block ml-2 mb-4">
       <%= button_to 'Destroy this section', section_path(@section), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
     </div>
     <%= link_to 'Back to sections', sections_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>

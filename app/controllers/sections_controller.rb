@@ -3,7 +3,7 @@ class SectionsController < ApplicationController
 
   # GET /sections or /sections.json
   def index
-    @sections = Section.where(parent_id: nil).order(:title).includes(:sub_sections)
+    @sections = Section.where(parent_id: nil).order(:created_at).includes(:sub_sections)
   end
 
   # GET /sections/1 or /sections/1.json
