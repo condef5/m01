@@ -7,9 +7,32 @@
     <%= render @section %>
 
     <%= link_to 'Edit this section', edit_section_path(@section), class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+
     <div class="inline-block ml-2 mb-4">
       <%= button_to 'Destroy this section', section_path(@section), method: :delete, class: "mt-2 rounded-lg py-3 px-5 bg-gray-100 font-medium" %>
     </div>
+
     <%= link_to 'Back to sections', sections_path, class: "ml-2 rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
+
+    <hr>
+
+    <div class="flex justify-between items-center mt-4 mb-2">
+      <h1 class="font-bold text-xl">Topics</h1>
+      <%= link_to 'New topic', new_section_topic_path(@section), class: "rounded-lg py-3 px-5 bg-blue-600 text-white block font-medium" %>
+    </div>
+
+    <% if @section.topics.any? %>
+      <ul class="">
+        <% @section.topics.each do |topic| %>
+          <li class="flex items-center gap-2 py-1">
+            <%= link_to "* " + topic.title, section_topic_path(@section, topic) %>
+            <% if topic.video.present?  %>
+              <%= link_to "🎥 video", topic.video, target: "_blank", class: "border-b-2 border-red-500" %>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
+
   </div>
 </div>
